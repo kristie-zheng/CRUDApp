@@ -6,22 +6,34 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <!-- in case CDN jquery doesnt work 
     <script src= "libs/jquery.js"></script>-->  
- <script src = "app.js"></script>
-</head>
-<body>
-  <textarea class="codeSnippet" name="codeSnippet"></textarea>
-  <!-- <input class="textField" type="text" name= "firstInputField">  -->
-  <button type="button" class="setData"> Click to save text </button> 
-  <button type="button" class="getData"> Click to retrieve text </button> 
-  <input class="searchBar" type="text" name="search">
-  <button type="button" class="search"> Search </button>
-  <div class="snippetDisplay"></div>
+    <script src = "app.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Snippet Saver</h1>
+    </div>
+    <div class="addSnippet">
+      <p>Snippet Title</p>
+      <input class="snippetTitle" type="text" name= "snippetTitle"><br> 
+      <p>Snippet</p>
+      <textarea class="codeSnippet" name="codeSnippet" rows="10" cols="50"></textarea><br>
+      <button type="button" class="setData"> Click to save snippet! </button> 
+      <div class="searchDiv">
+        <p>Search for a previously entered snippet </p>
+        <input class="searchBar" type="text" name="search">
+        <button type="button" class="search"> Search </button>
+      </div>
+      <button type="button" class="getData"> Click to retrieve all snippets </button> 
 
-<script>
 
-</script>
-</body>
-</html>
+    </div>
+    <div class="snippetDisplay"></div>
+
+    <script>
+
+    </script>
+  </body>
+  </html>
 
 <!-- create a text field that accepts a name
 change text field to be text area so it can accept a snippet
