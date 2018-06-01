@@ -3,13 +3,16 @@ $(document).ready(function(){
   $('.setData').on('click', function() {
     //let textFieldValue = $('.textField').val();
     let snippet = $('.codeSnippet').val();
+    let snippetTitle = $('.snippetTitle').val();
     // $('.debug').text(textFieldValue);
-      localStorage.setItem('myFormTextData', snippet);
+      localStorage.setItem(snippetTitle, snippet);
   });
 
-$('.getData').on('click', function() {
+$('.search').on('click', function() {
   let retrievedData = localStorage.getItem('myFormTextData');
-  $('.snippetDisplay').text(retrievedData);
+  let searchQuery = $('.searchBar').val();
+  let searchResult = localStorage.getItem(searchQuery);
+  $('.snippetDisplay').text(searchResult);
 });
   // $('.textField').on('change', function() {
   //   let textFieldValue = $('.textField').val();
