@@ -1,0 +1,10 @@
+button {
+  padding: 15px;
+  background-color: lightskyblue;
+  color: white;
+  font-size: 14px;
+}
+
+hr {
+  border-width: 1px;
+}
