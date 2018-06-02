@@ -7,27 +7,33 @@
   <!-- in case CDN jquery doesnt work 
     <script src= "libs/jquery.js"></script>-->  
     <script src = "app.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
   </head>
   <body>
     <div class="header">
       <h1>Snippet Saver</h1>
     </div>
+    <hr>
     <div class="addSnippet">
-      <p>Snippet Title</p>
+      <h2> Add A New Snippet </h2>
+      <h3>Snippet Title</h3>
       <input class="snippetTitle" type="text" name= "snippetTitle"><br> 
-      <p>Snippet</p>
+      <h3>Snippet</h3>
       <textarea class="codeSnippet" name="codeSnippet" rows="10" cols="50"></textarea><br>
       <button type="button" class="setData"> Click to save snippet! </button> 
+      </div>
+      <hr>
       <div class="searchDiv">
-        <p>Search for a previously entered snippet </p>
+        <h2>Retrieve Saved Snippets </h2>
         <input class="searchBar" type="text" name="search">
         <button type="button" class="search"> Search </button>
       </div>
       <button type="button" class="getData"> Click to retrieve all snippets </button> 
+    
 
-
+    <div class="snippetDisplay">
+      <textarea class="displaySnippets" rows="10" cols="50"></textarea>
     </div>
-    <div class="snippetDisplay"></div>
 
     <script>
 
