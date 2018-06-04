@@ -8,3 +8,16 @@ button {
 hr {
   border-width: 1px;
 }
+
+/*.overwrite
+{
+  display: none;
+}
+
+.doNotOverwrite {
+  display: none;
+}
+*/
+.hidden {
+  display: none;
+}
