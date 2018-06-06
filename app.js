@@ -55,7 +55,17 @@ $(".snippetContainer").append($titleAndSnippet);
 
 $(".eachTitle").on('click', function() {
   $(this).toggleClass('selectedForDeletion');
-})
+});
+
+$(".delete").on('click', function() {
+  console.log($(".selectedForDeletion").val())
+  localStorage.removeItem($(".selectedForDeletion").val());
+  //select elements that have class .selectedForDeletion
+  //get the value of the title, which is the key
+  //delete the value at that key in the local storage
+  //idea one: hide selected divs
+  //idea two: prompt user to refresh
+});
 //when eachTitle is clicked
   //toggle a class .taggedForDeletion
   //change font color .css to blue or something
