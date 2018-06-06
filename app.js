@@ -38,27 +38,28 @@ $('.doNotOverwrite').on('click', function() {
       $('.displaySnippets').text('Your query did not match any existing snippets. Please enter a new query.');
     }
   });
-  // $('.textField').on('change', function() {
-  //   let textFieldValue = $('.textField').val();
-  //   $('.debug').text(textFieldValue);
-  // })
+
 for (var key in localStorage) {
   var $eachSnip = $("<textarea></textarea>");
   $eachSnip.addClass('eachSnip');
   $eachSnip.val(localStorage.getItem(key));
   var $eachTitle = $("<h3></h3>");
+  $eachTitle.addClass('eachTitle');
   $eachTitle.text(key);
   $titleAndSnippet = $("<div></div>")
   $titleAndSnippet.addClass('titleAndSnippet');
   $titleAndSnippet.append($eachTitle);
-  $eachTitle.append($eachSnip);
+  $eachTitle.after($eachSnip);
 $(".snippetContainer").append($titleAndSnippet);
-  //$(".snippetContainer").append($eachSnip);
-
-  //$("<h3>YO</h3>").prepend('.eachSnip');
-  
 }
 
-
+$(".eachTitle").on('click', function() {
+  $(this).toggleClass('selectedForDeletion');
+})
+//when eachTitle is clicked
+  //toggle a class .taggedForDeletion
+  //change font color .css to blue or something
+  //display a button (created in index.html) using show
+    //upon click...delete
 });
 

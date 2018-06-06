@@ -17,3 +17,7 @@ hr {
 .eachSnip {
   display: block;
 }
+
+.selectedForDeletion {
+  color: blue;
+}
