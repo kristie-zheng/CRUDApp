@@ -19,5 +19,15 @@ hr {
 }
 
 .selectedForDeletion {
-  color: blue;
+  color: lightskyblue;
+}
+
+.header {
+  font-family: 'American Typewriter';
+  text-align: center;
+}
+
+body {
+  margin-left: 5%;
+  margin-right: 5%;
 }
