@@ -9,15 +9,11 @@ hr {
   border-width: 1px;
 }
 
-/*.overwrite
-{
+
+.hidden {
   display: none;
 }
 
-.doNotOverwrite {
-  display: none;
-}
-*/
-.hidden {
-  display: none;
+.eachSnip {
+  display: block;
 }

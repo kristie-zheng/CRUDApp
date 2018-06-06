@@ -3,27 +3,13 @@ $(document).ready(function(){
   $('.setData').on('click', function() {  
     let snippet = $('.codeSnippet').val();
     let snippetTitle = $('.snippetTitle').val();
-    // $('.debug').text(textFieldValue);
-    //let $addSnipConfirmation = $(".addSnipConfirmation");
-    //console.log(localStorage.getItem(snippetTitle));
-    //alert(typeof localStorage[snippetTitle] + "!!!");
     if (localStorage.getItem(snippetTitle) !== null) {
       $('.overwriteConfirmationMessage').text('You already have a snippet with this title. Overwrite?');
       $(".overwrite").show();
       $(".doNotOverwrite").show();
     } else {
-      localStorage.setItem(snippetTitle, snippet);
+      localStorage.setItem(snippetTitle, JSON.stringify(snippet));
     }
-    //overwrite permission
-    //do a lookup to see if entered key exists in local storage
-    //if entered key exists in local store
-      //ask user if they want to overwrite existing snippet at that key
-      //display buttons yes/no
-        //if yes, 
-          //overwrite
-        //else
-          //do nothing
-      
   });
 
   $('.overwrite').on('click', function() {
@@ -58,11 +44,18 @@ $('.doNotOverwrite').on('click', function() {
   // })
 for (var key in localStorage) {
   var $eachSnip = $("<textarea></textarea>");
-  //$eachSnip.val(localStorage[key]);
-  // var $eachTitle = $("<h3></h3>");s
-  // $eachTitle.text(key);
-  // $eachTitle.before($eachSnip);
-  $(".snippetContainer").append($eachSnip);
+  $eachSnip.addClass('eachSnip');
+  $eachSnip.val(localStorage.getItem(key));
+  var $eachTitle = $("<h3></h3>");
+  $eachTitle.text(key);
+  $titleAndSnippet = $("<div></div>")
+  $titleAndSnippet.addClass('titleAndSnippet');
+  $titleAndSnippet.append($eachTitle);
+  $eachTitle.append($eachSnip);
+$(".snippetContainer").append($titleAndSnippet);
+  //$(".snippetContainer").append($eachSnip);
+
+  //$("<h3>YO</h3>").prepend('.eachSnip');
   
 }
 
