@@ -58,8 +58,18 @@ $(".eachTitle").on('click', function() {
 });
 
 $(".delete").on('click', function() {
-  console.log($(".selectedForDeletion").val())
-  localStorage.removeItem($(".selectedForDeletion").val());
+  // for (var i = 0; i < document.getElementsByClassName('selectedForDeletion').length; i++)
+  // {
+  //   console.log(document.getElementsByClassName('selectedForDeletion')[i]);
+  // }
+
+$(".selectedForDeletion").parent().css("border", "1px solid green");
+$(".selectedForDeletion").parent().hide();
+alert(typeof $(".selectedForDeletion").text());
+
+
+localStorage.removeItem($(".selectedForDeletion").text());
+
   //select elements that have class .selectedForDeletion
   //get the value of the title, which is the key
   //delete the value at that key in the local storage
