@@ -1,14 +1,18 @@
 $(document).ready(function(){
-  $('.setData').on('click', function() {
+
+  $('.setData').on('click', function() {  
     let snippet = $('.codeSnippet').val();
     let snippetTitle = $('.snippetTitle').val();
     // $('.debug').text(textFieldValue);
-    let $addSnipConfirmation = $(".addSnipConfirmation");
-    if (localStorage[snippetTitle] !== undefined) {
+    //let $addSnipConfirmation = $(".addSnipConfirmation");
+    //console.log(localStorage.getItem(snippetTitle));
+    //alert(typeof localStorage[snippetTitle] + "!!!");
+    if (localStorage.getItem(snippetTitle) !== null) {
       $('.overwriteConfirmationMessage').text('You already have a snippet with this title. Overwrite?');
-      //$addSnipConfirmation.append('<p>You already have a snippet with this title. Overwrite?</p>');
       $(".overwrite").show();
       $(".doNotOverwrite").show();
+    } else {
+      localStorage.setItem(snippetTitle, snippet);
     }
     //overwrite permission
     //do a lookup to see if entered key exists in local storage
@@ -19,8 +23,24 @@ $(document).ready(function(){
           //overwrite
         //else
           //do nothing
-      localStorage.setItem(snippetTitle, snippet);
+      
   });
+
+  $('.overwrite').on('click', function() {
+    let snippet = $('.codeSnippet').val();
+    let snippetTitle = $('.snippetTitle').val();
+    localStorage.setItem(snippetTitle, snippet);
+    $(".overwrite").hide();
+    $(".doNotOverwrite").hide();
+    $('.overwriteConfirmationMessage').text('New snippet added');
+  });
+
+$('.doNotOverwrite').on('click', function() {
+    $(".overwrite").hide();
+    $(".doNotOverwrite").hide();
+    $('.overwriteConfirmationMessage').text('Did not overwrite previous snippet');
+  });
+
 
   $('.search').on('click', function() {
     //let retrievedData = localStorage.getItem('myFormTextData');
@@ -38,10 +58,10 @@ $(document).ready(function(){
   // })
 for (var key in localStorage) {
   var $eachSnip = $("<textarea></textarea>");
-  $eachSnip.html(localStorage[key]);
-  var $eachTitle = $("<h3></h3>");
-  $eachTitle.text(key);
-  $eachTitle.before($eachSnip);
+  //$eachSnip.val(localStorage[key]);
+  // var $eachTitle = $("<h3></h3>");s
+  // $eachTitle.text(key);
+  // $eachTitle.before($eachSnip);
   $(".snippetContainer").append($eachSnip);
   
 }
