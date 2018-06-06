@@ -58,28 +58,12 @@ $(".eachTitle").on('click', function() {
 });
 
 $(".delete").on('click', function() {
-  // for (var i = 0; i < document.getElementsByClassName('selectedForDeletion').length; i++)
-  // {
-  //   console.log(document.getElementsByClassName('selectedForDeletion')[i]);
-  // }
-
-$(".selectedForDeletion").parent().css("border", "1px solid green");
-$(".selectedForDeletion").parent().hide();
-alert(typeof $(".selectedForDeletion").text());
-
-
-localStorage.removeItem($(".selectedForDeletion").text());
-
-  //select elements that have class .selectedForDeletion
-  //get the value of the title, which is the key
-  //delete the value at that key in the local storage
-  //idea one: hide selected divs
-  //idea two: prompt user to refresh
+  $(".selectedForDeletion").each(function() {
+    var keyToDelete = $(this).html();
+    localStorage.removeItem(keyToDelete);
+    $(this).parent().hide();
+  });
 });
-//when eachTitle is clicked
-  //toggle a class .taggedForDeletion
-  //change font color .css to blue or something
-  //display a button (created in index.html) using show
-    //upon click...delete
+
 });
 
