@@ -9,6 +9,7 @@ $(document).ready(function(){
       $(".doNotOverwrite").show();
     } else {
       localStorage.setItem(snippetTitle, JSON.stringify(snippet));
+      refreshSnippetList();
     }
   });
 
@@ -19,6 +20,7 @@ $(document).ready(function(){
     $(".overwrite").hide();
     $(".doNotOverwrite").hide();
     $('.overwriteConfirmationMessage').text('New snippet added');
+    refreshSnippetList();
   });
 
 $('.doNotOverwrite').on('click', function() {
@@ -29,7 +31,6 @@ $('.doNotOverwrite').on('click', function() {
 
 
   $('.search').on('click', function() {
-    //let retrievedData = localStorage.getItem('myFormTextData');
     let searchQuery = $('.searchBar').val();
     let searchResult = localStorage.getItem(searchQuery);
     if (searchResult !== null) {
@@ -39,7 +40,9 @@ $('.doNotOverwrite').on('click', function() {
     }
   });
 
-for (var key in localStorage) {
+var refreshSnippetList = function() {
+  $(".snippetContainer").html('');
+  for (var key in localStorage) {
   var $eachSnip = $("<textarea rows=10 cols=40></textarea>");
   $eachSnip.addClass('eachSnip');
   $eachSnip.val(localStorage.getItem(key));
@@ -50,14 +53,17 @@ for (var key in localStorage) {
   $titleAndSnippet.addClass('titleAndSnippet');
   $titleAndSnippet.append($eachTitle);
   $eachTitle.after($eachSnip);
-$(".snippetContainer").append($titleAndSnippet);
-}
+  $(".snippetContainer").append($titleAndSnippet);
+  }
+};
+
+refreshSnippetList();
+
 
 $(".copySnippet").on('click', function() {
   var copiedSnippet = document.getElementsByClassName('displaySnippets')[0];
   copiedSnippet.select();
   document.execCommand("copy");
-  alert(copiedSnippet.value);
 }); 
 
 $(".eachTitle").on('click', function() {
