@@ -40,7 +40,7 @@ $('.doNotOverwrite').on('click', function() {
   });
 
 for (var key in localStorage) {
-  var $eachSnip = $("<textarea></textarea>");
+  var $eachSnip = $("<textarea rows=10 cols=40></textarea>");
   $eachSnip.addClass('eachSnip');
   $eachSnip.val(localStorage.getItem(key));
   var $eachTitle = $("<h3></h3>");
@@ -52,6 +52,13 @@ for (var key in localStorage) {
   $eachTitle.after($eachSnip);
 $(".snippetContainer").append($titleAndSnippet);
 }
+
+$(".copySnippet").on('click', function() {
+  var copiedSnippet = document.getElementsByClassName('displaySnippets')[0];
+  copiedSnippet.select();
+  document.execCommand("copy");
+  alert(copiedSnippet.value);
+}); 
 
 $(".eachTitle").on('click', function() {
   $(this).toggleClass('selectedForDeletion');
