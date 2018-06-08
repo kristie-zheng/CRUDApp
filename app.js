@@ -8,7 +8,7 @@ $(document).ready(function(){
       $(".overwrite").show();
       $(".doNotOverwrite").show();
     } else {
-      localStorage.setItem(snippetTitle, JSON.stringify(snippet));
+      localStorage.setItem(snippetTitle, String(snippet));
       refreshSnippetList();
     }
   });
@@ -46,6 +46,7 @@ var refreshSnippetList = function() {
   var $eachSnip = $("<textarea rows=10 cols=40></textarea>");
   $eachSnip.addClass('eachSnip');
   $eachSnip.val(localStorage.getItem(key));
+
   var $eachTitle = $("<h3></h3>");
   $eachTitle.addClass('eachTitle');
   $eachTitle.text(key);
@@ -53,6 +54,7 @@ var refreshSnippetList = function() {
   $titleAndSnippet.addClass('titleAndSnippet');
   $titleAndSnippet.append($eachTitle);
   $eachTitle.after($eachSnip);
+  $eachSnip.after($("<button type='button' class='copySnippet'><i class='far fa-clipboard fa-2x'></i></button>").appendTo($eachSnip));
   $(".snippetContainer").append($titleAndSnippet);
   }
 };
