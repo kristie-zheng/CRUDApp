@@ -8,72 +8,69 @@
     <script src= "libs/jquery.js"></script>-->  
     <script src = "app.js"></script>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  </head>
-  <body>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
-    <div class="header">
-      <h1>Snippet Saver</h1>
-    </div>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <!-- Popper JS -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 
-    <hr> 
+Latest compiled JavaScript
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>  -->
+</head>
+<body>
 
-    <div class="addSnippet">
-      <h2> Add a New Snippet </h2>
-      <h3>Snippet Title</h3>
-      <input class="snippetTitle" type="text" name= "snippetTitle"><br> 
-      <h3>Snippet</h3>
-      <textarea class="codeSnippet" name="codeSnippet" rows="10" cols="50"></textarea><br>
-      <button type="button" class="setData"> Click to save snippet! </button> 
-      <div class="addSnipConfirmation">
-        <div class="overwriteConfirmationMessage">
-          <p></p>
-        </div>
-        <div class="confirmationButtons">
-          <button type="button" class="overwrite hidden">Yes</button>
-          <button type="button" class="doNotOverwrite hidden">No</button>
+  <div class="header">
+    <h1><i class="far fa-bookmark"></i> Snippet Saver</h1> 
+  </div>
+
+  <hr> 
+  <div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10">
+      <div class="addSnippet">
+        <h2> Add a New Snippet </h2>
+        <h3>Snippet Title</h3>
+        <input class="snippetTitle" type="text" name= "snippetTitle"><br> 
+        <h3>Snippet</h3>
+        <pre><textarea class="codeSnippet" name="codeSnippet" rows="10" cols="50"></textarea></code></pre><br>
+        <button type="button" class="setData"> Click to save snippet! </button> 
+        <div class="addSnipConfirmation">
+          <div class="overwriteConfirmationMessage">
+            <p></p>
+          </div>
+          <div class="confirmationButtons">
+            <button type="button" class="overwrite hidden">Yes</button>
+            <button type="button" class="doNotOverwrite hidden">No</button>
+          </div>
         </div>
       </div>
+
+      <hr>
+
+      <div class="searchDiv">
+        <h2>Retrieve Saved Snippets </h2>
+        <p>Snippets are case sensitive </p>
+        <input class="searchBar" type="text" name="search">
+        <button type="button" class="search"> Search </button>
+      </div>
+
+      <div class="snippetDisplay">
+        <pre><code><textarea class="displaySnippets" rows="10" cols="50"></textarea></code></pre>
+        <button type="button" class="copyRetrievedSnippet"><i class="far fa-clipboard fa-2x"></i> Copy snippet to clipboard!</button>
+      </div>
+
+      <hr>
+
+      <div class="manageSnippets">
+        <h2> Manage All Snippets </h2>
+        <div class="snippetContainer"></div>
+        <button type="button" class="delete"> Delete selected snippets </button> 
+      </div>
+      
     </div>
+    <div class="col-lg-1"></div>
 
-    <hr>
-
-    <div class="searchDiv">
-      <h2>Retrieve Saved Snippets </h2>
-      <p>Snippets are case sensitive </p>
-      <input class="searchBar" type="text" name="search">
-      <button type="button" class="search"> Search </button>
-    </div>
-
-    <div class="snippetDisplay">
-      <textarea class="displaySnippets" rows="10" cols="50"></textarea>
-      <button type="button" class="copySnippet">Copy snippet to clipboard!</button>
-    </div>
-
-    <hr>
-
-    <div class="manageSnippets">
-      <h2> Manage All Snippets </h2>
-      <div class="snippetContainer"></div>
-      <button type="button" class="delete"> Delete selected snippets </button> 
-    </div>
-    
-
-<!--     <button type="button" class="getData"> Click to retrieve all snippets </button> 
- -->    <script>
-
-    </script>
   </body>
   </html>
-
-<!-- create a text field that accepts a name
-change text field to be text area so it can accept a snippet
-(app.js) write the input into local storage; use name var as key and a the text snippet var as value
-create a div, snippets that where the snippets will be displayed
-create a button to 'display all snippets'
-(app.js) when display snippets button is clicked overwrite the text 
-(app.js) iterate through the localStorage and display each key-value pair in turn
-make a text field for entering search query
-make a button that submits the search query on click
-(app.js) add jquery event handler that allows button click to execute a search function
-(app.js) search function: get data from localStorage with key searchQuery
- -->

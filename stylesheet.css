@@ -3,13 +3,16 @@ button {
   background-color: lightskyblue;
   color: white;
   font-size: 14px;
-  margin-top: 13px;
+  margin-top: 5px;
 }
 
 hr {
   border-width: 1px;
 }
 
+.copySnippet {
+  vertical-align: top;
+}
 
 .hidden {
   display: none;
@@ -20,12 +23,12 @@ hr {
   margin-right: 30px;
 }
 
-.selectedForDeletion {
-  color: lightskyblue;
+.titleAndSnippet {
+  margin-bottom: 20px;
 }
 
-.copySnippet {
-  position: relative;
+.selectedForDeletion {
+  color: lightskyblue;
 }
 
 .header {
