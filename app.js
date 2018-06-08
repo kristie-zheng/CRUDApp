@@ -24,11 +24,11 @@ $(document).ready(function(){
     refreshSnippetList();
   });
 
-$('.doNotOverwrite').on('click', function() {
-    $(".overwrite").hide();
-    $(".doNotOverwrite").hide();
-    $('.overwriteConfirmationMessage').text('Did not overwrite previous snippet');
-  });
+  $('.doNotOverwrite').on('click', function() {
+      $(".overwrite").hide();
+      $(".doNotOverwrite").hide();
+      $('.overwriteConfirmationMessage').text('Did not overwrite previous snippet');
+    });
 
 
   $('.search').on('click', function() {
@@ -63,7 +63,7 @@ $('.doNotOverwrite').on('click', function() {
   refreshSnippetList();
 
 
-  $(".copySnippet").on('click', function() {
+  $(document).on('click', ".copySnippet", function() {
     var copiedSnippet = $(this).parent().children(".eachSnip");
     copiedSnippet.select();
     document.execCommand("copy");
