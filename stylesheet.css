@@ -3,6 +3,7 @@ button {
   background-color: lightskyblue;
   color: white;
   font-size: 14px;
+  margin-top: 13px;
 }
 
 hr {
@@ -15,23 +16,40 @@ hr {
 }
 
 .eachSnip {
-  display: block;
+  display: inline;
+  margin-right: 30px;
 }
 
 .selectedForDeletion {
   color: lightskyblue;
 }
 
+.copySnippet {
+  position: relative;
+}
+
 .header {
-  font-family: 'American Typewriter';
   text-align: center;
 }
 
-body {
-  margin-left: 5%;
-  margin-right: 5%;
+* {
+  font-family: 'Quicksand';
 }
 
-button {
-  margin-top: 13px;
+.textArea {
+  rows: 10;
+  cols: 50;
 }
+
+.header {
+  margin-top: 50px;
+}
+
+div {
+  background-color: rgba(255, 255, 255, 0.3)
+}
+
+body {
+  background: url(https://openclipart.org/image/2400px/svg_to_png/179319/Lined_Paper.png) no-repeat;
+  background-size: cover;
+} 
