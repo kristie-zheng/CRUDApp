@@ -8,6 +8,7 @@ $(document).ready(function(){
       $(".overwrite").show();
       $(".doNotOverwrite").show();
     } else {
+      $('.overwriteConfirmationMessage').text('New snippet added');
       localStorage.setItem(snippetTitle, String(snippet));
       refreshSnippetList();
     }
@@ -19,7 +20,7 @@ $(document).ready(function(){
     localStorage.setItem(snippetTitle, snippet);
     $(".overwrite").hide();
     $(".doNotOverwrite").hide();
-    $('.overwriteConfirmationMessage').text('New snippet added');
+    $('.overwriteConfirmationMessage').text('Overwrote snippet');
     refreshSnippetList();
   });
 
@@ -40,51 +41,51 @@ $('.doNotOverwrite').on('click', function() {
     }
   });
 
-var refreshSnippetList = function() {
-  $(".snippetContainer").html('');
-  for (var key in localStorage) {
-  var $eachSnip = $("<textarea rows=10 cols=40></textarea>");
-  $eachSnip.addClass('eachSnip');
-  $eachSnip.val(localStorage.getItem(key));
+  var refreshSnippetList = function() {
+    $(".snippetContainer").html('');
+    for (var key in localStorage) {
+    var $eachSnip = $("<textarea rows=10 cols=40></textarea>");
+    $eachSnip.addClass('eachSnip');
+    $eachSnip.val(localStorage.getItem(key));
 
-  var $eachTitle = $("<h3></h3>");
-  $eachTitle.addClass('eachTitle');
-  $eachTitle.text(key);
-  $titleAndSnippet = $("<div></div>")
-  $titleAndSnippet.addClass('titleAndSnippet');
-  $titleAndSnippet.append($eachTitle);
-  $eachTitle.after($eachSnip);
-  $eachSnip.after($("<button type='button' class='copySnippet'><i class='far fa-clipboard fa-2x'></i></button>").appendTo($eachSnip));
-  $(".snippetContainer").append($titleAndSnippet);
-  }
-};
+    var $eachTitle = $("<h3></h3>");
+    $eachTitle.addClass('eachTitle');
+    $eachTitle.text(key);
+    $titleAndSnippet = $("<div></div>")
+    $titleAndSnippet.addClass('titleAndSnippet');
+    $titleAndSnippet.append($eachTitle);
+    $eachTitle.after($eachSnip);
+    $eachSnip.after($("<button type='button' class='copySnippet'><i class='far fa-clipboard fa-2x'></i></button>").appendTo($eachSnip));
+    $(".snippetContainer").append($titleAndSnippet);
+    }
+  };
 
-refreshSnippetList();
+  refreshSnippetList();
 
 
-$(".copySnippet").on('click', function() {
-  var copiedSnippet = $(this).parent().children(".eachSnip");
-  copiedSnippet.select();
-  document.execCommand("copy");
-}); 
+  $(".copySnippet").on('click', function() {
+    var copiedSnippet = $(this).parent().children(".eachSnip");
+    copiedSnippet.select();
+    document.execCommand("copy");
+  }); 
 
-$(".copyRetrievedSnippet").on('click', function() {
-  var copiedSnippet = document.getElementsByClassName('displaySnippets')[0];
-  copiedSnippet.select();
-  document.execCommand("copy");
-}); 
+  $(".copyRetrievedSnippet").on('click', function() {
+    var copiedSnippet = document.getElementsByClassName('displaySnippets')[0];
+    copiedSnippet.select();
+    document.execCommand("copy");
+  }); 
 
-$(".eachTitle").on('click', function() {
-  $(this).toggleClass('selectedForDeletion');
-});
-
-$(".delete").on('click', function() {
-  $(".selectedForDeletion").each(function() {
-    var keyToDelete = $(this).html();
-    localStorage.removeItem(keyToDelete);
-    $(this).parent().hide();
+  $(".eachTitle").on('click', function() {
+    $(this).toggleClass('selectedForDeletion');
   });
-});
+
+  $(".delete").on('click', function() {
+    $(".selectedForDeletion").each(function() {
+      var keyToDelete = $(this).html();
+      localStorage.removeItem(keyToDelete);
+      $(this).parent().hide();
+    });
+  });
 
 });
 
