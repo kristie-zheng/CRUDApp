@@ -63,6 +63,12 @@ refreshSnippetList();
 
 
 $(".copySnippet").on('click', function() {
+  var copiedSnippet = $(this).parent().children(".eachSnip");
+  copiedSnippet.select();
+  document.execCommand("copy");
+}); 
+
+$(".copyRetrievedSnippet").on('click', function() {
   var copiedSnippet = document.getElementsByClassName('displaySnippets')[0];
   copiedSnippet.select();
   document.execCommand("copy");
