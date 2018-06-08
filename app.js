@@ -75,7 +75,7 @@ $('.doNotOverwrite').on('click', function() {
     document.execCommand("copy");
   }); 
 
-  $(".eachTitle").on('click', function() {
+  $(document).on('click', ".eachTitle", function() {
     $(this).toggleClass('selectedForDeletion');
   });
 
