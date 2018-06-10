@@ -44,6 +44,7 @@ $(document).ready(function(){
   var refreshSnippetList = function() {
     $(".snippetContainer").html('');
     for (var key in localStorage) {
+    console.log(key);
     var $eachSnip = $("<textarea rows=10 cols=40></textarea>");
     $eachSnip.addClass('eachSnip');
     $eachSnip.val(localStorage.getItem(key));
@@ -87,5 +88,22 @@ $(document).ready(function(){
     });
   });
 
+  $(".tabLink").on('click', function() {
+    if ($(this).hasClass('add')) {
+      displayTab('addSnippet');
+    } else if ($(this).hasClass('search')) {
+      displayTab('searchDiv');
+    } else if ($(this).hasClass('modify')){
+      displayTab('manageSnippets');
+    }
+    
+    //check what the button's other class is
+    //pass it as param to display tab
+  });
+
+  var displayTab = function(tabName) {
+    $('.' + tabName).show();
+    //hide the other tabs that have class 'tabContent' but not class [tabLink]
+  }
 });
 
