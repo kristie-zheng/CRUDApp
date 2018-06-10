@@ -102,7 +102,9 @@ $(document).ready(function(){
   });
 
   var displayTab = function(tabName) {
+    $(".tabContent[class!=tabName]").hide();
     $('.' + tabName).show();
+
     //hide the other tabs that have class 'tabContent' but not class [tabLink]
   }
 });
