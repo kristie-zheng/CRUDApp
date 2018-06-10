@@ -42,15 +42,15 @@ $(document).ready(function(){
 
   var refreshSnippetList = function() {
     $(".snippetContainer").html('');
-    for (var key in localStorage) {
-    console.log(key);
+    for (var i=0; i < Object.keys(localStorage).length; i++) {
+    //console.log(key);
     var $eachSnip = $("<textarea rows=10 cols=40></textarea>");
     $eachSnip.addClass('eachSnip');
-    $eachSnip.val(localStorage.getItem(key));
+    $eachSnip.val(localStorage.getItem(Object.keys(localStorage)[i]));
 
     var $eachTitle = $("<h3></h3>");
     $eachTitle.addClass('eachTitle');
-    $eachTitle.text(key);
+    $eachTitle.text(Object.keys(localStorage)[i]);
     $titleAndSnippet = $("<div></div>")
     $titleAndSnippet.addClass('titleAndSnippet');
     $titleAndSnippet.append($eachTitle);

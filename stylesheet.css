@@ -6,9 +6,9 @@ button {
   margin-top: 5px;
 }
 
-hr {
+/*hr {
   border-width: 1px;
-}
+}*/
 
 .copySnippet {
   vertical-align: top;
@@ -48,20 +48,23 @@ hr {
   margin-top: 50px;
 }
 
-div {
+/*div {
   background-color: rgba(255, 255, 255, 0.3)
-}
+}*/
 
-body, html {
+/*body, html {
   height: 100%;
   margin: 0;
-} 
+} */
 
-.tablink {
-  float: left;
+.tabLink {
   width: 33%;
 }
 
 .tabContent {
   display: none;
+}
+
+.search {
+  margin-bottom: 10px;
 }
