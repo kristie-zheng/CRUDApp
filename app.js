@@ -30,7 +30,6 @@ $(document).ready(function(){
       $('.overwriteConfirmationMessage').text('Did not overwrite previous snippet');
     });
 
-
   $('.search').on('click', function() {
     let searchQuery = $('.searchBar').val();
     let searchResult = localStorage.getItem(searchQuery);
@@ -96,16 +95,11 @@ $(document).ready(function(){
     } else if ($(this).hasClass('modify')){
       displayTab('manageSnippets');
     }
-    
-    //check what the button's other class is
-    //pass it as param to display tab
   });
 
   var displayTab = function(tabName) {
     $(".tabContent[class!=tabName]").hide();
     $('.' + tabName).show();
-
-    //hide the other tabs that have class 'tabContent' but not class [tabLink]
   }
 });
 

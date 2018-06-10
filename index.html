@@ -13,57 +13,65 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-</head>
-<body>
+  </head>
+  <body>
 
-  <div class="header">
-    <h1><i class="far fa-bookmark"></i> Snippet Saver</h1> 
-    <hr> 
-    <button class="tabLink add">Add Snippet</button>
-    <button class="tabLink search">Search Snippets</button>
-    <button class="tabLink modify">Manage All Snippets</button>
-  </div>
-
-  
+   
 
 
-  <div class="row">
-    <div class="col-lg-1"></div>
-    <div class="col-lg-10">
 
-      <div class="addSnippet tabContent">
-        <h2> Add a New Snippet </h2>
-        <h3>Snippet Title</h3>
-        <input class="snippetTitle" type="text" name= "snippetTitle"><br> 
-        <h3>Snippet</h3>
-        <pre><textarea class="codeSnippet" name="codeSnippet" rows="10" cols="50"></textarea></code></pre><br>
-        <button type="button" class="setData"> Click to save snippet! </button> 
-        <div class="addSnipConfirmation">
-          <div class="overwriteConfirmationMessage">
-            <p></p>
-          </div>
-          <div class="confirmationButtons">
-            <button type="button" class="overwrite hidden">Yes</button>
-            <button type="button" class="doNotOverwrite hidden">No</button>
-          </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+         <div class="header">
+          <h1><i class="far fa-bookmark"></i> Snippet Saver</h1> 
+          <button class="tabLink add">Add Snippet</button>
+          <button class="tabLink search">Search Snippets</button>
+          <button class="tabLink modify">Manage All Snippets</button>
         </div>
-      </div>
+
+        <div class="addSnippet tabContent">
+
+          <div>
+            <h2> Add a New Snippet </h2>
+            <h3>Snippet Title</h3>
+            <input class="snippetTitle" type="text" name= "snippetTitle"><br> 
+            <h3>Snippet</h3>
+            <pre><textarea class="codeSnippet" name="codeSnippet" rows="10" cols="50"></textarea></code></pre><br>
+            <button type="button" class="setData"> Click to save snippet! </button> 
+          </div>
+
+          <div class="addSnipConfirmation">
+
+            <div class="overwriteConfirmationMessage">
+              <p></p>
+            </div>
+
+            <div class="confirmationButtons">
+              <button type="button" class="overwrite hidden">Yes</button>
+              <button type="button" class="doNotOverwrite hidden">No</button>
+            </div>
+
+          </div>
+
+        </div>
 
       <!-- <hr>
- -->
+      -->
       <div class="searchDiv tabContent">
         <div>
-        <h2>Retrieve Saved Snippets </h2>
-        <p>Snippets are case sensitive </p>
-        <input class="searchBar" type="text" name="search">
-        <button type="button" class="search"> Search </button>
-      </div>
+          <h2>Retrieve Saved Snippets </h2>
+          <p>Snippets are case sensitive </p>
+          <input class="searchBar" type="text" name="search">
+          <button type="button" class="search"> Search </button>
+        </div>
 
-      <div class="snippetDisplay">
-        <pre><code><textarea class="displaySnippets" rows="10" cols="50"></textarea></code></pre>
-        <button type="button" class="copyRetrievedSnippet"><i class="far fa-clipboard fa-2x"></i> Copy snippet to clipboard!</button>
+        <div class="snippetDisplay">
+          <pre><code><textarea class="displaySnippets" rows="10" cols="50"></textarea></code></pre>
+          <button type="button" class="copyRetrievedSnippet"><i class="far fa-clipboard fa-2x"></i> Copy snippet to clipboard!</button>
+        </div>
       </div>
-    </div>
       <!-- <hr> -->
 
       <div class="manageSnippets tabContent">
@@ -74,9 +82,10 @@
       
     </div>
     <div class="col-lg-1"></div>
+  </div>
+</div>
 
 
 
-
-  </body>
-  </html>
+</body>
+</html>
