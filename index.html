@@ -18,13 +18,20 @@
 
   <div class="header">
     <h1><i class="far fa-bookmark"></i> Snippet Saver</h1> 
+    <hr> 
+    <button class="tabLink add">Add Snippet</button>
+    <button class="tabLink search">Search Snippets</button>
+    <button class="tabLink modify">Manage All Snippets</button>
   </div>
 
-  <hr> 
+  
+
+
   <div class="row">
     <div class="col-lg-1"></div>
     <div class="col-lg-10">
-      <div class="addSnippet">
+
+      <div class="addSnippet tabContent">
         <h2> Add a New Snippet </h2>
         <h3>Snippet Title</h3>
         <input class="snippetTitle" type="text" name= "snippetTitle"><br> 
@@ -42,9 +49,10 @@
         </div>
       </div>
 
-      <hr>
-
-      <div class="searchDiv">
+      <!-- <hr>
+ -->
+      <div class="searchDiv tabContent">
+        <div>
         <h2>Retrieve Saved Snippets </h2>
         <p>Snippets are case sensitive </p>
         <input class="searchBar" type="text" name="search">
@@ -55,10 +63,10 @@
         <pre><code><textarea class="displaySnippets" rows="10" cols="50"></textarea></code></pre>
         <button type="button" class="copyRetrievedSnippet"><i class="far fa-clipboard fa-2x"></i> Copy snippet to clipboard!</button>
       </div>
+    </div>
+      <!-- <hr> -->
 
-      <hr>
-
-      <div class="manageSnippets">
+      <div class="manageSnippets tabContent">
         <h2> Manage All Snippets </h2>
         <div class="snippetContainer"></div>
         <button type="button" class="delete"> Delete selected snippets </button> 
@@ -66,6 +74,9 @@
       
     </div>
     <div class="col-lg-1"></div>
+
+
+
 
   </body>
   </html>
